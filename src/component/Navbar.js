@@ -17,19 +17,19 @@ const useStyles = makeStyles((theme) => ({
     navlinks: {
         marginLeft: theme.spacing(5),
         display: "flex",
-        
+
     },
     logo: {
         flexGrow: "1",
         cursor: "pointer",
         fontSize: "20px",
-        color:'#222'
+        color: '#222'
     },
     link: {
         textDecoration: "none",
         color: "white",
         fontSize: "15px",
-        color:'#222',
+        color: '#222',
         marginLeft: theme.spacing(6),
         "&:hover": {
             color: "blue",
@@ -44,7 +44,7 @@ function Navbar() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <AppBar position="static" className ={classes.root}>
+        <AppBar position="static" className={classes.root}>
             <CssBaseline />
             <Toolbar>
                 <Typography variant="h6" className={classes.logo}>
@@ -64,8 +64,8 @@ function Navbar() {
                         <Link to="/contact" className={classes.link}>
                             Contact
                         </Link>
-                        <Link to="/faq" className={classes.link}>
-                            FAQ
+                        <Link to="/login" className={classes.link}>
+                            Login
                         </Link>
                     </div>
                 )}
