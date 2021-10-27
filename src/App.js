@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import Faq from "./pages/faq";
+import Login from "./pages/login";
 function App() {
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
-        <Route path="/faq" component={Faq} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   );
