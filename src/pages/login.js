@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios'
+import { ThumbUpAltRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         padding: theme.spacing(10),
+        margin: theme.spacing(5),
 
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
@@ -22,10 +24,11 @@ const useStyles = makeStyles(theme => ({
         },
     },
     btn: {
-        color: 'green'
+        color: 'green',
     },
     cancel: {
         color: 'red'
+       
     }
 }));
 
@@ -67,7 +70,7 @@ const Login = () => {
         <form className={classes.root} onSubmit={handleSubmit}>
             <TextField
                 label="Email"
-                variant="filled"
+                variant="outlined"
                 type="email"
                 required
                 value={email}
@@ -75,17 +78,17 @@ const Login = () => {
             />
             <TextField
                 label="Password"
-                variant="filled"
+                variant="outlined"
                 type="password"
                 required
                 value={password}
                 onChange={e => setPassword(e.target.value)}
             />
             <div>
-                <Button variant="contained" onClick={closeOpen} className={classes.cancel}>
+                <Button variant="outlined" onClick={closeOpen} className={classes.cancel}>
                     Cancel
                 </Button>
-                <Button type="submit" variant="contained" className={classes.btn}>
+                <Button type="submit" variant="outlined" className={classes.btn}>
                     Login
                 </Button>
             </div>

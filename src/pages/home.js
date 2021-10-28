@@ -1,8 +1,6 @@
 import { Typography } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
-import { findByLabelText } from "@testing-library/dom";
-
+import { makeStyles, InputLabel, Select, MenuItem, FormControl, FormHelperText,Button } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
@@ -15,6 +13,10 @@ const useStyles = makeStyles(theme => ({
         // borderRadius: "5px",
 
         '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '600px',
+        },
+        '& .MuiSelect-root': {
             margin: theme.spacing(1),
             width: '600px',
         },
@@ -36,6 +38,20 @@ const useStyles = makeStyles(theme => ({
         '& .MuiButtonBase-root': {
             margin: theme.spacing(2),
         },
+    },
+    selectors: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        '& .MuiSelect-root': {
+            margin: theme.spacing(1),
+            width: '160px',
+        },
+        '& .MuiButtonBase-root': {
+            margin: theme.spacing(2),
+        },
     }
 }))
 
@@ -47,7 +63,7 @@ const Home = () => {
             <Typography>Project Overview</Typography>
             <TextField
                 label="Project Finance Code"
-                variant="standard"
+                variant="outlined"
                 type="text"
                 required
             // onChange = {}
@@ -55,7 +71,7 @@ const Home = () => {
             />
             <TextField
                 label="Project Title"
-                variant="standard"
+                variant="outlined"
                 type="text"
                 required
             // onChange = {}
@@ -63,7 +79,7 @@ const Home = () => {
             />
             <TextField
                 label="Funding Institute"
-                variant="standard"
+                variant="outlined"
                 type="text"
                 required
             // onChange = {}
@@ -71,7 +87,7 @@ const Home = () => {
             />
             <TextField
                 label="Amount Budget"
-                variant="standard"
+                variant="outlined"
                 type="text"
                 required
             // onChange = {}
@@ -79,7 +95,7 @@ const Home = () => {
             />
             <TextField
                 label="IRB Number Given"
-                variant="standard"
+                variant="outlined"
                 type="text"
                 required
             // onChange = {}
@@ -114,16 +130,69 @@ const Home = () => {
                 // value={'4455590'}
                 />
             </div>
+            <div className={classes.selectors}>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        // value={age}
+                        label="Age"
+                        onChange={""}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                    <FormHelperText>Directorate Name</FormHelperText>
+                </FormControl>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        // value={age}
+                        label="Age"
+                        onChange={""}
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                    <FormHelperText>Types of Research Project</FormHelperText>
+                </FormControl>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        // value={''}
+                        label="Age"
+                        onChange={""}
+                        // variant = "contained"
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                    <FormHelperText>Progress Level</FormHelperText>
+                </FormControl>
+            </div>
 
-            {/* <TextField
-                label="IRB Number Given"
-                variant="standard"
-                type="select"
-                required
-            // onChange = {}
-            // value={'4455590'}
-            /> */}
-
+            <div>
+                <Button type="submit" variant="contained" >
+                   Next 
+                </Button>
+            </div>
         </from>
     )
 }
