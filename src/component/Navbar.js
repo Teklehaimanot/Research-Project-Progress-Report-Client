@@ -44,7 +44,7 @@ function Navbar() {
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <AppBar position="static" className={classes.root}>
+        <AppBar position="fixed" className={classes.root}>
             <CssBaseline />
             <Toolbar>
                 <Typography variant="h6" className={classes.logo}>
